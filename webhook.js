@@ -14,7 +14,7 @@ const https = require('https');
 module.exports = (webhook) => {
   webhook.on('action1', (session) => {
       return new Promise((resolve, reject) => {
-         https.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vR3yNZq3fil8p0RxlsUmcAb1YYdLqnR6x-uG7dEblB9igZyYYsrNdeSUYeL4QeDPWSsgIFlBOPFeyA5/pubhtml', (resp) => {
+         https.get('https://tools.seo-zona.ru', (resp) => {
              session.variable = 'some value';
              resolve();
          });
