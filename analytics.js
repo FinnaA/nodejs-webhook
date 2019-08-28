@@ -1,7 +1,7 @@
 <!-- Google Analytics -->
 <script>
 window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', '208523347', 'auto');
+ga('create', '208513815', 'auto');
 ga('send', 'pageview');
 ga('create', 'GA_MEASUREMENT_ID', 'auto');
 ga('set', 'appName', 'myAppName');
