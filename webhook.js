@@ -14,7 +14,7 @@ const https = require('https');
 module.exports = (webhook) => {
   webhook.on('sort', (session) => {
       return new Promise((resolve, reject) => {
-         https.get('https://docs.google.com/spreadsheets/d/1dUfu5NCCcwSf_YRGrzT3xt5twnZqDVj1eSwRQWEE1EE', (resp) => {
+         https.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vSt0XvHjnahlX57fHa_H12m-Bfa0C0WAfWAH5lhaQGg2V-PLUtRikiQ7ZuqUBPhNYr2FcJQ2oM4Nvvc/pubhtml', (resp) => {
              session.variable = 'result';
              resolve(); // Промис выполнен
          });
