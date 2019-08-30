@@ -13,7 +13,7 @@ module.exports = (webhook) => {
   webhook.on('action1', (session) => {
       session.variable1 = 'some value';
       session.variable2 = 'some value';
-	  a ='Hello';
+	var a ='Hello';
   });
 }
 	
