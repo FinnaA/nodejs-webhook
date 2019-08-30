@@ -7,15 +7,13 @@
  */
 
 
-const https = require('https');
+'use strict';
 
 module.exports = (webhook) => {
-  webhook.on('sort', (session) => { // Название события - sort
-      return new Promise((resolve, reject) => {
-         https.get('https://tools.aimylogic.com/api/googlesheet2json?id=1dUfu5NCCcwSf_YRGrzT3xt5twnZqDVj1eSwRQWEE1EE', (resp) => {
-             session.variable = 'result'; // Ответ от http хочу поместить в переменную $result
-             resolve(); // Промис выполнен
-         });
-      });
+  webhook.on('action1', (session) => {
+      session.variable1 = 'some value';
+      session.variable2 = 'some value';
+	  a ='Hello';
   });
 }
+	
