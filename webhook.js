@@ -6,19 +6,16 @@
  * Please read more here https://github.com/aimylogic/nodejs-webhook
  */
 
-'use strict';
-
 
 const https = require('https');
 
 module.exports = (webhook) => {
-  webhook.on('sort', (session) => {
+  webhook.on('sort', (session) => { // Название события - sort
       return new Promise((resolve, reject) => {
          https.get('https://tools.aimylogic.com/api/googlesheet2json?id=1dUfu5NCCcwSf_YRGrzT3xt5twnZqDVj1eSwRQWEE1EE', (resp) => {
-             session.variable = 'result';
-                console.log('test');
+             session.variable = 'result'; // Ответ от http хочу поместить в переменную $result
              resolve(); // Промис выполнен
          });
       });
   });
-};
+}
