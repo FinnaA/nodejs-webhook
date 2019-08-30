@@ -12,12 +12,12 @@
 const https = require('https');
 
 module.exports = (webhook) => {
-  webhook.on('action1', (session) => {
+  webhook.on('sort', (session) => {
       return new Promise((resolve, reject) => {
-         https.get('https://tools.seo-zona.ru', (resp) => {
-             session.variable = 'some value';
-             resolve();
+         https.get('https://tools.aimylogic.com/api/googlesheet2json?id=1dUfu5NCCcwSf_YRGrzT3xt5twnZqDVj1eSwRQWEE1EE', (resp) => {
+             session.variable = 'result';
+             resolve(); // Промис выполнен
          });
       });
   });
-}
+};
