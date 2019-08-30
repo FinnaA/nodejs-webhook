@@ -16,6 +16,7 @@ module.exports = (webhook) => {
       return new Promise((resolve, reject) => {
          https.get('https://tools.aimylogic.com/api/googlesheet2json?id=1dUfu5NCCcwSf_YRGrzT3xt5twnZqDVj1eSwRQWEE1EE', (resp) => {
              session.variable = 'result';
+           console.log('test')
              resolve(); // Промис выполнен
          });
       });
