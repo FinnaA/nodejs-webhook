@@ -10,7 +10,7 @@
 'use strict';
 
 module.exports = (webhook) => {
-  webhook.on( query, (session) => {
+  webhook.on( (session) => {
     const request = session.request;
     
     if (request) {
