@@ -12,7 +12,6 @@
 const express = require('express');
 
 const app = express();
-const PORT = 3000;
 
 // Инициализируем глобальный объект $session для хранения данных в памяти
 // Примечание: при перезапуске скрипта данные в памяти сбросятся.
@@ -58,7 +57,4 @@ app.post('/webhook', (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Webhook is listening on http://localhost:${PORT}/webhook`);
-});
 	
