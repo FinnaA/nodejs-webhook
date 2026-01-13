@@ -11,9 +11,23 @@
 
 module.exports = (webhook) => {
   webhook.on('action1', (session) => {
-      session.variable1 = 'some value';
-      session.variable2 = 'some value';
-	var a ='Hello';
+    var text = '';
+    
+    if (session.request?.data?.replies) {
+      const replies = session.request.data.replies;
+      
+      for (let i = 0; i < replies.length; i++) {
+        if (replies[i].text) {
+          text = replies[i].text;
+          break;
+        }
+      }
+    }
+    
+    session.text = text;
+    session.variable1 = 'some value';
+    session.variable2 = 'some value';
+    var a = 'Hello';
   });
 }
 	
