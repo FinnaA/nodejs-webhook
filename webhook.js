@@ -10,24 +10,20 @@
 'use strict';
 
 module.exports = (webhook) => {
-  webhook.on('action1', (session) => {
-    var text = '';
+  webhook.on( query, (session) => {
+    const request = session.request;
     
-    if (session.request?.data?.replies) {
-      const replies = session.request.data.replies;
-      
-      for (let i = 0; i < replies.length; i++) {
-        if (replies[i].text) {
-          text = replies[i].text;
-          break;
-        }
-      }
+    if (request) {
+      session.$request = {
+        data: request.data || {},
+        query: request.query || '',
+        clientId: request.clientId || '',
+        clientInfo: request.clientInfo || {},
+        timestamp: request.timestamp || '',
+        status: request.status || '',
+        cid: request.cid || ''
+      };
     }
-    
-    session.text = text;
-    session.variable1 = 'some value';
-    session.variable2 = 'some value';
-    var a = 'Hello';
   });
 }
 	
